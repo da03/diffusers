@@ -22,9 +22,9 @@ import re
 from collections import OrderedDict
 from typing import Any, Dict, Tuple, Union
 
-from huggingface_hub import hf_hub_download
+from .utils.hub_compat import hf_hub_download
 from huggingface_hub.utils import EntryNotFoundError, RepositoryNotFoundError, RevisionNotFoundError
-from requests import HTTPError
+from huggingface_hub.utils import HfHubHTTPError as HTTPError
 
 from . import __version__
 from .utils import DIFFUSERS_CACHE, HUGGINGFACE_CO_RESOLVE_ENDPOINT, logging

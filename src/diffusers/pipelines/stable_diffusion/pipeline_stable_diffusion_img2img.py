@@ -6,7 +6,11 @@ import torch
 
 import PIL
 from tqdm.auto import tqdm
-from transformers import CLIPFeatureExtractor, CLIPTextModel, CLIPTokenizer
+from transformers import CLIPTextModel, CLIPTokenizer
+try:
+    from transformers import CLIPFeatureExtractor
+except ImportError:
+    from transformers import CLIPImageProcessor as CLIPFeatureExtractor
 
 from ...models import AutoencoderKL, UNet2DConditionModel
 from ...pipeline_utils import DiffusionPipeline

@@ -21,7 +21,7 @@ from typing import Optional, Union
 
 import torch
 
-from huggingface_hub import snapshot_download
+from .utils.hub_compat import snapshot_download
 from PIL import Image
 from tqdm.auto import tqdm
 
